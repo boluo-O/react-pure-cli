@@ -61,14 +61,12 @@ module.exports = {
 			},
 			{
 				test: /\.(le|c)ss$/,
-				use: isDev
-					? 'style-loader'
-					: [
-						MiniCssExtractPlugin.loader,
-						'css-loader',						// 这里需不需加 importLoaders: 1 ？？？
-						'postcss-loader',
-						'less-loader',
-					]
+				use: [
+					isDev ? 'style-loader': MiniCssExtractPlugin.loader,
+					'css-loader',						 	// 这里需不需加 importLoaders: 1 ？？？
+					'postcss-loader',
+					'less-loader',
+				]
 			},
 			{
 				test: /\.(jpg|jpeg|png|gif|ico|cur|svg|)$/,

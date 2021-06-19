@@ -1,3 +1,7 @@
+// self use unperfect log, use like that    
+// var str = '123456'
+// log({a})
+// str 123456
 window.log = (variableObj) => {
     let _type = typeof(variableObj)
 

@@ -60,6 +60,13 @@ module.exports = {
 				],
 			},
 			{
+				test: /\.(ts|tsx)$/,
+				use: 'ts-loader',
+				include: [
+					path.join(__dirname, 'src'),
+				],
+			},
+			{
 				test: /\.(le|c)ss$/,
 				use: [
 					isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -116,6 +123,9 @@ module.exports = {
 			}),
 			new CssMinimizerPlugin()
 		]
+	},
+	resolve: {
+		extensions: ['.tsx', '.ts', '.js', '.json'],
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
